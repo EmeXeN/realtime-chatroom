@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="chat">
+        <div class="chat__title">
+            <h1>Chat Room</h1>
+        </div>
+        <div class="chat__chatrooms">
+            <h2 class="chat__chatrooms_title">Choose a chatroom:</h2>
+            <div class="chat__chatrooms_buttons">
+                <button class="chat__chatrooms_button" data-id="general">#general</button>
+                <button class="chat__chatrooms_button" data-id="gaming">#gaming</button>
+                <button class="chat__chatrooms_button" data-id="music">#music</button>
+            </div>
+        </div>
+        <div class="chat-messages-wrapper"></div>
+        <div class="chat__forms">
+            <form class="chat__forms_sendmessage-form">
+                <input type="text" name="textInput" placeholder="Your message:" required>
+                <input type="submit" value="send">
+            </form>
+            <form class="chat__forms_updatename-form">
+                <input type="text" name="textInput" placeholder="Update name:" required>
+                <input type="submit" value="apply">
+            </form>
+        </div>
+        <div class="chat__current-name">Current name: <span class="chat__current-name_data"></span></div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script>
+        const config = {
+            apiKey: "AIzaSyBzr8NoH9QcZ9Mse55CGUG3xpth3qx8kN0",
+            authDomain: "realtime-chatroom-3d543.firebaseapp.com",
+            projectId: "realtime-chatroom-3d543",
+            storageBucket: "realtime-chatroom-3d543.appspot.com",
+            messagingSenderId: "223211509783",
+            appId: "1:223211509783:web:1ce9d703cbcfb94d52a452",
+            measurementId: "G-T9XYZN93BH"
+        };
+        firebase.initializeApp(config)
+        const db = firebase.firestore()
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js" integrity="sha512-F+u8eWHrfY8Xw9BLzZ8rG/0wIvs0y+JyRJrXjp3VjtFPylAEEGwKbua5Ip/oiVhaTDaDs4eU2Xtsxjs/9ag2bQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/chat.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
